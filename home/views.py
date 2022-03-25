@@ -13,16 +13,6 @@ from django.contrib.auth.forms import UserCreationForm
 from home.forms import CreateUserForm
 from django.contrib.auth.decorators import login_required
 from .models import  Destination
-#from django.views.generic import ListView, CreateView # new
-#from django.urls import reverse_lazy # new
-
-# from home.forms import ImageForm # new
-
-#dummy
-
-
-#password for test user is 1234$sahil
-# Create your views here.
 
 @login_required(login_url='login')
 def index(request):
@@ -75,38 +65,6 @@ def logoutUser(request):
     logout(request)
     return redirect("/login")
 
-#dummy1
-#def contact(request):
-#    if request.method=="POST":
-#        name=request.POST.get('name')
-#        image=request.POST.get('image')
-#        contact=Contact(name=name,image=image)
-#        contact.save()
-#        messages.success(request, 'Your message has been sent!')
-#    return render(request,"contact.html")
-
-#def contact(request):
-#    lastimage=Contact.objects.last()
-#    image=lastimage.image
-
-#    form=ImageForm(request.POST or None, request.FILES or None)
-#    if form.is_valid():
-#        form.save()
-
-#    context={'image':image, 'form':form}
-
-#    return render(request, 'contact.html', context)
-
-# def contact(request):
-    # if request.method =='POST':
-        # form=ImageForm(request.POST, request.FILES)
-        # if form.is_valid():
-            # form.save()
-            # img_obj=form.instance
-            # return render(request, 'contact.html', {'form':form, 'img_obj':img_obj})
-    # else:
-        # form= ImageForm()
-    # return render(request, 'contact.html', {'form':form})
 
 def blog(request):
 
@@ -145,21 +103,3 @@ def contact(request):
         document.save()
         messages.success(request, 'Your message has been sent!')
     return render(request, "contact.html")
-#dummy1
-
-#dummy
-#class HomePageView(ListView):
-#    model = Post
-#    template_name = 'index.html'
-
-
-#class HomePageView(ListView):
-#    model = Post
-#    template_name = 'index.html'
-
-#class CreatePostView(CreateView): # new
-#    model = Post
-#    form_class = PostForm
-#    template_name = 'post.html'
-#    success_url = reverse_lazy('index')
-#dummy
