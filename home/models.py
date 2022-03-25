@@ -45,9 +45,6 @@ class Contact(models.Model):
     file1 = models.FileField( default="")
     Aadhar = models.CharField(max_length=12, default="")
     desc = models.TextField( default="")
-    # date = models.DateField(default=datetime.today())
-    #image=models.ImageField(upload_to="images/", null=True, verbose_name="", default="")
-
 
     def __str__(self):
         return self.name
